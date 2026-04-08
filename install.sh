@@ -94,3 +94,7 @@ if ! command -v "$BIN_NAME" >/dev/null 2>&1; then
   echo "  export PATH=\"${install_dir}:\$PATH\""
 fi
 
+echo ""
+echo "Registering contextpool MCP server with Claude Code and Cursor..."
+"${install_dir}/${BIN_NAME}" install --binary-path "${install_dir}/${BIN_NAME}" || true
+
