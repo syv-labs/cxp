@@ -95,6 +95,6 @@ if ! command -v "$BIN_NAME" >/dev/null 2>&1; then
 fi
 
 echo ""
-echo "Registering contextpool MCP server with Claude Code and Cursor..."
+echo "Registering contextpool MCP server with Claude Code, Cursor, and Codex..."
 "${install_dir}/${BIN_NAME}" install --binary-path "${install_dir}/${BIN_NAME}" || true
 

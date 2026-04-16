@@ -105,6 +105,15 @@ try {
   Write-Host "  `$env:Path = '$InstallDir;' + `$env:Path"
   Write-Host ""
   Write-Host "Or permanently (User PATH) via System Settings."
+
+  $BinPath = Join-Path $InstallDir $BinName
+  Write-Host ""
+  Write-Host "Registering contextpool MCP server with Claude Code, Cursor, and Codex..."
+  try {
+    & $BinPath install --binary-path $BinPath
+  } catch {
+    Write-Warning "MCP registration failed: $_"
+  }
 }
 finally {
   Remove-Item -Recurse -Force $Tmp -ErrorAction SilentlyContinue
